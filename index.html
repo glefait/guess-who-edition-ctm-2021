@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guess Who ? CTM 2021 Edition !</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class='container'>
+    <form class='board' id='board'>
+        <div class='slots'>
+            <div class='slot'>
+                <input class='control' id='card-0' type='checkbox'>
+                <label class='card card-0' for='card-0'>
+                    <div class='card__grips'></div>
+                    <div class='card__front'><p>Serge Letchimy</p></div>
+                </label>
+            </div>
+            <div class='slot'>
+                <input class='control' id='card-1' type='checkbox'>
+                <label class='card card-1' for='card-1'>
+                    <div class='card__grips'></div>
+                    <div class='card__front'><p>Marcel Sellaye</p></div>
+                </label>
+            </div>
+            <div class='slot'>
+                <input class='control' id='card-2' type='checkbox'>
+                <label class='card card-2' for='card-2'>
+                    <div class='card__grips'></div>
+                    <div class='card__front'><p>Jean-Philippe Nilor</p></div>
+                </label>
+            </div>
+            <div class='slot'>
+                <input class='control' id='card-3' type='checkbox'>
+                <label class='card card-3' for='card-3'>
+                    <div class='card__grips'></div>
+                    <div class='card__front'><p>Max Orville</p></div>
+                </label>
+            </div>
+            <div class='slot'>
+                <input class='control' id='card-4' type='checkbox'>
+                <label class='card card-4' for='card-4'>
+                    <div class='card__grips'></div>
+                    <div class='card__front'><p>Béatrice Bellay</p></div>
+                </label>
+            </div>
+            <div class='slot'>
+                <input class='control' id='card-5' type='checkbox'>
+                <label class='card card-5' for='card-5'>
+                    <div class='card__grips'></div>
+                    <div class='card__front'><p>Philippe Petit</p></div>
+                </label>
+            </div>
+            <div class='slot'>
+                <input class='control' id='card-6' type='checkbox'>
+                <label class='card card-6' for='card-6'>
+                    <div class='card__grips'></div>
+                    <div class='card__front'><p>Philippe Jock</p></div>
+                </label>
+            </div>
+            <div class='slot'>
+                <input class='control' id='card-7' type='checkbox'>
+                <label class='card card-7' for='card-7'>
+                    <div class='card__grips'></div>
+                    <div class='card__front'><p>Ralph Monplaisir</p></div>
+                </label>
+            </div>
+            <div class='slot'>
+                <input class='control' id='card-8' type='checkbox'>
+                <label class='card card-8' for='card-8'>
+                    <div class='card__grips'></div>
+                    <div class='card__front'><p>Alfred Marie-Jeanne</p></div>
+                </label>
+            </div>
+            <div class='slot'>
+                <input class='control' id='card-9' type='checkbox'>
+                <label class='card card-9' for='card-9'>
+                    <div class='card__grips'></div>
+                    <div class='card__front'><p>Guy Ferdinand</p></div>
+                </label>
+            </div>
+            <div class='slot'>
+                <input class='control' id='card-10' type='checkbox'>
+                <label class='card card-10' for='card-10'>
+                    <div class='card__grips'></div>
+                    <div class='card__front'><p>Olivier Bérisson</p></div>
+                </label>
+            </div>
+            <div class='slot'>
+                <input class='control' id='card-11' type='checkbox'>
+                <label class='card card-11' for='card-11'>
+                    <div class='card__grips'></div>
+                    <div class='card__front'><p>Yan Monplaisir</p></div>
+                </label>
+            </div>
+            <div class='slot'>
+                <input class='control' id='card-12' type='checkbox'>
+                <label class='card card-12' for='card-12'>
+                    <div class='card__grips'></div>
+                    <div class='card__front'><p>Catherine Conconne</p></div>
+                </label>
+            </div>
+            <div class='slot'>
+                <input class='control' id='card-13' type='checkbox'>
+                <label class='card card-13' for='card-13'>
+                    <div class='card__grips'></div>
+                    <div class='card__front'><p>Gabriel Jean-Marie</p></div>
+                </label>
+            </div>
+            <div class='slot'>
+                <input class='control' id='card-14' type='checkbox' checked>
+                <label class='card card-14 card-fusion' for='card-14'>
+                    <div class='card__grips'></div>
+                    <div class='card__front'><p>Daniel Robin</p></div>
+                </label>
+            </div>
+            <div class='slot'>
+                <input class='control' id='card-15' type='checkbox' checked>
+                <label class='card card-15 card-incomplete' for='card-15'>
+                    <div class='card__grips'></div>
+                    <div class='card__front'><p>Edryan Rangoly</p></div>
+                </label>
+            </div>
+            <div class='slot'>
+                <input class='control' id='card-16' type='checkbox' checked>
+                <label class='card card-16 card-incomplete' for='card-16'>
+                    <div class='card__grips'></div>
+                    <div class='card__front'><p>Yann Mievilly</p></div>
+                </label>
+            </div>
+        </div>
+        <footer class='footer'>
+            <h1 class='title'>
+                Go fucking vote !
+            </h1>
+            <!--
+            <button class='btn--rematch' id='btn-rematch' type='reset'>
+              <span class='btn--rematch-front'>
+                Revote ?
+              </span>
+            </button>-->
+        </footer>
+    </form>
+</div>
+<script type="Javascript">
+    const cardsNum = document.querySelectorAll('.slot').length;
+    const cardAssigned = document.getElementById('card-assigned');
+    const board = document.getElementById('board');
+    const btnRematch = document.getElementById('btn-rematch');
+    const btnMode = document.getElementById('btn-mode');
+    const getRand = limit => Math.round(Math.random() * limit);
+    cardAssigned.className = 'card card--assigned card-' + getRand(cardsNum);
+    btnRematch.onclick = () => {
+        cardAssigned.className = 'card card--assigned card-' + getRand(cardsNum);
+    };
+    btnMode.onclick = () => {
+        board.classList.toggle('special')
+    };
+</script>
+</body>
+</html>
